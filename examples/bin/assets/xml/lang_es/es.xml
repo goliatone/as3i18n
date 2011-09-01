@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<lang locale="es" name="Spanish" variant="Español">
+	<copy id="helloWorld"><![CDATA[¡Hola Mundo!]]></copy>
+	
+	<bundle id="texts">
+		<copy id="message1" >
+			<![CDATA[<p>Este es un mensage dentro de un ResouceBundle</p>]]>
+		</copy>		
+	</bundle>
+</lang>

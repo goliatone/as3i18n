@@ -1,0 +1,23 @@
+******************************************************************************
+* LOCALIZATION PACKAGE.
+* 
+******************************************************************************
+- Detach from logging framework.
+------------------------------------------------------------------------------
+MERGING: ADDING EXTERNAL BUNDLES
+------------------------------------------------------------------------------
+Add methods to merge resources from different sources. i.e:
+- We load main locale file. A component such as a Image Gallery has its own 
+localization file, not loaded with Application file. We want to add its 
+resources to currentBundle so that we use the localization manager.
+------------------------------------------------------------------------------
+FONT SUPPORT
+------------------------------------------------------------------------------
+Research on integrating font definition support.
+------------------------------------------------------------------------------
+TEXTPATTERN SUPPORT AND INFLECTOR SUPPORT.
+------------------------------------------------------------------------------
+-Support for message formats: Hello ${user}, wellcome${first_time}!
+	=> Hello goliat, wellcome back! or Hello goliat, wellcome!
+------------------------------------------------------------------------------
+
