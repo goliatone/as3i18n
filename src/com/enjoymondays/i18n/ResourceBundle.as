@@ -21,16 +21,12 @@
  */
 package com.enjoymondays.i18n {
 	
-	import com.skinnygeek.logging.Logger;
-	
 	import com.enjoymondays.data.TypedHashMap;	
 	import com.enjoymondays.i18n.core.ILocale;
 	import com.enjoymondays.i18n.core.IResourceBundle;
 	import com.enjoymondays.i18n.core.ILocalizedResource;
 	import com.enjoymondays.i18n.resources.LocalizedResource;
 	
-	
-
 	/**
 	 * REVISION Add nested retrieval by notation, i.e. getResource("urlRewrite/HomePage")
 	 * 
@@ -71,7 +67,7 @@ package com.enjoymondays.i18n {
 		/** @private **/
 		private var _rawbundle					:*;
 		
-		private var _logger						:Logger = Logger.instance( ResourceBundle );
+		//private var _logger						:Logger = Logger.instance( ResourceBundle );
 		
 		/**
 		 * <code class="prettyprint">ResourceBundle</code>
@@ -164,13 +160,13 @@ package com.enjoymondays.i18n {
 		
 		/** @inheritDoc */
 		public function addResource( resource:ILocalizedResource ):void {
-			_logger.fatal("adding resource to bundle %0 with id %1",_id, resource.id );
+			//_logger.fatal("adding resource to bundle %0 with id %1",_id, resource.id );
 			_bundle.add( resource.id, resource );
 		}
 		
 		/** @inheritDoc */
 		public function buildResource( key:String, message:String, data:Object = null ):void {
-			_logger.fatal("build resource to bundle %0 with id %1",_id, key );
+			//_logger.fatal("build resource to bundle %0 with id %1",_id, key );
 			_bundle.add( key, new LocalizedResource( key, message, data ) );
 		}
 		
@@ -196,7 +192,7 @@ package com.enjoymondays.i18n {
 		
 		/** @inheritDoc */
 		public function addRawData(raw:* ):void {
-			_logger.warn("ADDING RAW DATA!: %0", raw );
+			//_logger.warn("ADDING RAW DATA!: %0", raw );
 			_rawbundle = raw;
 		}
 		

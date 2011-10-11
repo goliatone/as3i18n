@@ -21,8 +21,6 @@
  */
 package com.enjoymondays.i18n {
 	
-	import com.skinnygeek.logging.Logger;
-	
 	import com.enjoymondays.i18n.core.ILocale;
 	import com.enjoymondays.i18n.core.ILocalizationManager;
 	import com.enjoymondays.i18n.core.ILocalizedResource;
@@ -90,7 +88,7 @@ package com.enjoymondays.i18n {
 		
 		
 		//** @private */
-		private var _logger								:Logger = Logger.instance( LocalizationManager );
+		//private var _logger								:Logger = Logger.instance( LocalizationManager );
 		
 		
 		/** @private */
@@ -199,9 +197,10 @@ package com.enjoymondays.i18n {
 			 */ 
 			if( _persistent && locale != DEFAULT_LOCALE ) {
 				locale =  _persistence.readLocale( locale );
-				if ( notSupportedLocale( locale ) ) _logger.warn("The persisted Locale ( %0 ) is not supported", locale.code );
-				else {
-					_logger.warn("Using persistent Locale ( %0 ) from previous session", locale.code );
+				if ( notSupportedLocale( locale ) ){
+					//_logger.warn("The persisted Locale ( %0 ) is not supported", locale.code );
+				} else {
+					//_logger.warn("Using persistent Locale ( %0 ) from previous session", locale.code );
 					currentLocale = locale;
 				}
 				
@@ -234,7 +233,7 @@ package com.enjoymondays.i18n {
 			_locale 	= locale;
 			
 			dispatchEvent( new LocalizationEvent( LocalizationEvent.UPDATE_REQUEST, locale ) );
-			_logger.info( "Set current locale to %0", locale.name );
+			//_logger.info( "Set current locale to %0", locale.name );
 			
 			_updateLangResources( );
 			
@@ -296,7 +295,7 @@ package com.enjoymondays.i18n {
 			
 			_localeSupport[ locale.code ] = locale;
 			
-			_logger.info( "Add supported locale %0", locale.name );
+			//_logger.info( "Add supported locale %0", locale.name );
 		}
 		
 		
@@ -307,7 +306,7 @@ package com.enjoymondays.i18n {
 		 */
 		/** @inheritDoc **/ 
 		public function onBundleLoaderResult( event:ResourceBundleLoaderEvent ):void {
-			_logger.warn("we have bundle loader result");
+			//_logger.warn("we have bundle loader result");
 			_resourceBundle = _providerStrategy.getResourceBundle( );			
 			_resources.add( _locale.code, _resourceBundle );
 			_notifyReady( );
@@ -320,7 +319,7 @@ package com.enjoymondays.i18n {
 		 */
 		public function onBundleLoaderError( event:ResourceBundleLoaderEvent ):void {
 			
-			_logger.error(" LOAD ERROR: RESOURCE FILE NOT FOUND ");
+			//_logger.error(" LOAD ERROR: RESOURCE FILE NOT FOUND ");
 			dispatchEvent( new LocalizationEvent( LocalizationEvent.UPDATE_ERROR, _locale ) );
 			_locale = _oldLocale;
 			_updateLangResources( );
@@ -409,7 +408,7 @@ package com.enjoymondays.i18n {
 			dispatchEvent( new LocalizationEvent( LocalizationEvent.UPDATE_AVAILABLE, _locale ) );
 			
 			if ( _persistent ) _persistence.saveLocale( _locale );
-			_logger.info("NOTIFY LANG LOADED! "  );
+			//_logger.info("NOTIFY LANG LOADED! "  );
 		}		
 	}
 }

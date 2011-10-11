@@ -20,9 +20,6 @@
  * THE SOFTWARE.
  */
 package com.enjoymondays.i18n.providers.loaders {
-	
-	import com.skinnygeek.logging.Logger;
-	
 	import com.enjoymondays.i18n.core.ILocale;
 	import com.enjoymondays.i18n.ResourceBundleVO;
 	import com.enjoymondays.i18n.core.IResourceBundleLoader;
@@ -46,12 +43,12 @@ package com.enjoymondays.i18n.providers.loaders {
 	 *	@Flash 		 Player 9.0.28.0
 	 *	@author 	 Emiliano Burgos
 	 *	@url		 http://www.enjoy-mondays.com
-	 * @version 	 1.0
+	 *  @version 	 1.0
 	 */
 	public class XMLResourceBundleLoader extends AbstractResourceBundleLoader {
 		
 		
-		private var _logger								:Logger = Logger.instance( XMLResourceBundleLoader );
+		//private var _logger								:Logger = Logger.instance( XMLResourceBundleLoader );
 		
 		
 		private var _xmlLoader							:URLLoader;

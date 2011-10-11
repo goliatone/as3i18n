@@ -21,8 +21,6 @@
  */
 package com.enjoymondays.i18n.providers {
 	
-	import com.skinnygeek.logging.Logger;
-	
 	import com.enjoymondays.i18n.core.ILocale;
 	import com.enjoymondays.i18n.core.ILocalizationManager;
 	import com.enjoymondays.i18n.core.IResourceBundle;
@@ -54,7 +52,7 @@ package com.enjoymondays.i18n.providers {
 	 */
 	public class DefaultProviderManager extends EventDispatcher implements IResourceBundleProviderManager {
 		
-		private var _logger											:Logger = Logger.instance( DefaultProviderManager );
+		//private var _logger											:Logger = Logger.instance( DefaultProviderManager );
 		
 		/** @private **/
 		protected var _owner										:ILocalizationManager;
@@ -106,7 +104,7 @@ package com.enjoymondays.i18n.providers {
 			
 			switch( e.type ) {
 				case ResourceBundleLoaderEvent.LOADED:
-					_logger.warn("resource loaded: %0", e.data );
+					//_logger.warn("resource loaded: %0", e.data );
 					_owner.onBundleLoaderResult( e );
 				break;
 				
@@ -128,10 +126,5 @@ package com.enjoymondays.i18n.providers {
 		public function setBaseUrl( baseUrl:String ):void {
 			_baseUrl = baseUrl;
 		}
-		
-		
-		
-		
 	}
-
 }
