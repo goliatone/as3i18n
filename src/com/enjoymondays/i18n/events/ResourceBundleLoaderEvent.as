@@ -37,7 +37,7 @@ package com.enjoymondays.i18n.events {
 	public class ResourceBundleLoaderEvent extends Event {
 		
 		public static const LOADED				:String = 'onResourceLoaded';
-		public static const ERROR				:String = 'onResourceLoaded';
+		public static const ERROR				:String = 'onResourceError';
 		public var data:*;
 		
 		
